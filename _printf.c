@@ -5,9 +5,10 @@
  * @string: string parameter
  * Return : nothing
  */
-void print_string(char *string)
+int print_string(char *string, int len)
 {
 	_puts(string);
+	return(*&len += _strlen(string));
 }
 
 /**
@@ -18,33 +19,44 @@ void print_string(char *string)
 
 int _printf(const char *format, ...)
 {
+	int len = 0;
 	va_list format_args;
 
 	va_start(format_args, format);
-	while (*format)
+	if (format != NULL)
 	{
-		if (*format == '%')
+		while (*format)
 		{
-			format++;
-			switch (*format)
+			if (*format == '%')
 			{
-				case 'c':
-					_putchar(va_arg(format_args, int));
-					break;
-				case 's':
-					print_string(va_arg(format_args, char *));
-					break;
-				default:
-					_putchar(*format);
-					break;
+				format++;
+				switch (*format)
+				{
+					case 'c':
+						_putchar(va_arg(format_args, int));
+						len++;
+						break;
+					case 's':
+						len += print_string(va_arg(format_args, char *), len);
+						break;
+					case '%':
+						_putchar(*format);
+						len++;
+						break;
+					default:
+						_putchar(*format);
+						len++;
+						break;
+				}
 			}
+			else
+			{
+				_putchar(*format);
+				len++;
+			}
+			format++;
 		}
-		else
-		{
-			_putchar(*format);
-		}
-		format++;
+		va_end(format_args);
 	}
-	va_end(format_args);
-	return (0);
+	return (len);
 }
