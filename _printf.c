@@ -3,12 +3,13 @@
 /**
  * print_string - prints strings only
  * @string: string parameter
- * Return : nothing
+ * @len: length of string
+ * Return : length of string
  */
 int print_string(char *string, int len)
 {
 	_puts(string);
-	return(*&len += _strlen(string));
+	return (*&len += _strlen(string));
 }
 
 /**
