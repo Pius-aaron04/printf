@@ -1,18 +1,6 @@
 #include "main.h"
 
 /**
- * print_string - prints strings only
- * @string: string parameter
- * @len: length of string
- * Return: number of characters printed.
- */
-int print_string(char *string, int len)
-{
-	_puts(string);
-	return (*&len += _strlen(string));
-}
-
-/**
  * _printf - prints format string
  * @format: format string
  * Return: number of characters printed
@@ -33,26 +21,22 @@ int _printf(const char *format, ...)
 			switch (*format)
 			{
 				case 'c':
-					_putchar(va_arg(format_args, int));
-					len++;
+					len += _putchar(va_arg(format_args, int));
 					break;
 				case 's':
-					len += print_string(va_arg(format_args, char *), len);
+					len += _puts(va_arg(format_args, char *));
 					break;
 				case '%':
-					_putchar(*format);
-					len++;
+					len += _putchar(*format);
 					break;
 				default:
-					_putchar(*format);
-					len++;
+					len += _putchar(*format);
 					break;
 			}
 		}
 		else
 		{
-			_putchar(*format);
-			len++;
+			len += _putchar(*format);
 		}
 		format++;
 	}

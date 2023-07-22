@@ -3,15 +3,20 @@
 /**
  * _puts - prints a string
  * @str: string
+ * Return: number of character printed
  */
 
-void _puts(char *str)
+int _puts(char *str)
 {
+	int l = 0;
+
 	if (str != NULL)
 		while (*str != '\0')
 		{
 			_putchar(*str);
 			str++;
+			l++;
 
 		}
+	return (l);
 }

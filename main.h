@@ -4,6 +4,6 @@
 #include <stdlib.h>
 int _printf(const char *format, ...);
 int _putchar(char c);
-void _puts(char *c);
+int _puts(char *c);
 int _strlen(char *s);
 #endif
