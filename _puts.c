@@ -10,13 +10,14 @@ int _puts(char *str)
 {
 	int l = 0;
 
-	if (str != NULL)
-		while (*str != '\0')
-		{
-			_putchar(*str);
-			str++;
-			l++;
+	if (str == NULL)
+		str = "(null)";
+	while (*str != '\0')
+	{
+		_putchar(*str);
+		str++;
+		l++;
 
-		}
+	}
 	return (l);
 }
