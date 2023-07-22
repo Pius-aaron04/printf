@@ -4,7 +4,7 @@
  * print_string - prints strings only
  * @string: string parameter
  * @len: length of string
- * Return : length of string
+ * Return: number of characters printed.
  */
 int print_string(char *string, int len)
 {
@@ -26,6 +26,7 @@ int _printf(const char *format, ...)
 	va_start(format_args, format);
 	while (*format)
 	{
+		/* looks for format specifier and call appropriate function*/
 		if (*format == '%')
 		{
 			format++;
@@ -56,5 +57,5 @@ int _printf(const char *format, ...)
 		format++;
 	}
 	va_end(format_args);
-	return (0);
+	return (len);
 }
