@@ -24,40 +24,37 @@ int _printf(const char *format, ...)
 	va_list format_args;
 
 	va_start(format_args, format);
-	if (format != NULL)
+	while (*format)
 	{
-		while (*format)
+		if (*format == '%')
 		{
-			if (*format == '%')
-			{
-				format++;
-				switch (*format)
-				{
-					case 'c':
-						_putchar(va_arg(format_args, int));
-						len++;
-						break;
-					case 's':
-						len += print_string(va_arg(format_args, char *), len);
-						break;
-					case '%':
-						_putchar(*format);
-						len++;
-						break;
-					default:
-						_putchar(*format);
-						len++;
-						break;
-				}
-			}
-			else
-			{
-				_putchar(*format);
-				len++;
-			}
 			format++;
+			switch (*format)
+			{
+				case 'c':
+					_putchar(va_arg(format_args, int));
+					len++;
+					break;
+				case 's':
+					len += print_string(va_arg(format_args, char *), len);
+					break;
+				case '%':
+					_putchar(*format);
+					len++;
+					break;
+				default:
+					_putchar(*format);
+					len++;
+					break;
+			}
 		}
-		va_end(format_args);
+		else
+		{
+			_putchar(*format);
+			len++;
+		}
+		format++;
 	}
+	va_end(format_args);
 	return (len);
 }
