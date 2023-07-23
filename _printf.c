@@ -31,7 +31,7 @@ int _printf(const char *format, ...)
 				case '%':
 					len += _putchar(*format);
 					break;
-				case '\0' || ' ':/* invalid palacement of %*/
+				case '\0':
 					return (-1);
 				default:
 					len += _putchar(*format);
