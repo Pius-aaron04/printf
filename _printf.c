@@ -3,7 +3,7 @@
 /**
  * _printf - prints format string
  * @format: format string
- * Return: number of characters printed
+ * Return: number of characters printed or -1 if there is an error
  */
 
 int _printf(const char *format, ...)
@@ -32,6 +32,8 @@ int _printf(const char *format, ...)
 					len += _putchar(*format);
 					break;
 				case '\0':
+					return (-1);
+				case ' ':
 					return (-1);
 				default:
 					len += _putchar(*format);
