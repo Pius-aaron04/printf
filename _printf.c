@@ -29,15 +29,13 @@ int _printf(const char *format, ...)
 					len += _puts(va_arg(format_args, char *));
 					break;
 				case '%':
-					len += _putchar(*format);
+					len += _putchar('%');
 					break;
 				case '\0':
 					return (-1);
 				case ' ':
 					return (-1);
 				case 'i':
-					len += print_integer(va_arg(format_args, int));
-					break;
 				case 'd':
 					len += print_integer(va_arg(format_args, int));
 					break;
