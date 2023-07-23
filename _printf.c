@@ -12,6 +12,8 @@ int _printf(const char *format, ...)
 	va_list format_args;
 
 	va_start(format_args, format);
+	if (format == NULL)
+		return (-1);
 	while (*format)
 	{
 		/* looks for format specifier and call appropriate function*/
@@ -29,6 +31,8 @@ int _printf(const char *format, ...)
 				case '%':
 					len += _putchar(*format);
 					break;
+				case ' ':
+					return (-1);
 				default:
 					len += _putchar(*format);
 					break;
