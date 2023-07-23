@@ -31,7 +31,7 @@ int _printf(const char *format, ...)
 				case '%':
 					len += _putchar(*format);
 					break;
-				case ' ':
+				case '\0':
 					return (-1);
 				default:
 					len += _putchar(*format);
@@ -44,8 +44,6 @@ int _printf(const char *format, ...)
 		}
 		format++;
 	}
-	if (*format == '%')
-		return (-1);
 	va_end(format_args);
 	return (len);
 }
