@@ -35,6 +35,12 @@ int _printf(const char *format, ...)
 					return (-1);
 				case ' ':
 					return (-1);
+				case 'i':
+					len += print_integer(va_arg(format_args, int));
+					break;
+				case 'd':
+					len += print_integer(va_arg(format_args, int));
+					break;
 				default:
 					len += _putchar(*format);
 					break;
