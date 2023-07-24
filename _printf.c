@@ -19,8 +19,6 @@ int switch_format(char c, va_list format_args)
 			return (_putchar(c));
 		case '\0':
 			return (0);
-		case ' ':
-			return (0);
 		case 'i':
 			return (print_integer(va_arg(format_args, int)));
 		case 'd':
