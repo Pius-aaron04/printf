@@ -33,6 +33,8 @@ int switch_format(char c, va_list format_args)
 			return (print_rev(va_arg(format_args, char *)));
 		case 'u':
 			return (print_unsigned(va_arg(format_args, int)));
+		case 'R':
+			return (rot13(va_arg(format_args, char *)));
 		default:
 			return (_putchar(c));
 	}

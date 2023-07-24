@@ -12,4 +12,7 @@ int hex(int num, char x);
 int print_integer(int num);
 int print_unsigned(int num);
 int print_rev(char *s);
+int _islower(int c);
+int rot13(char *c);
+int _isalpha(int c);
 #endif

@@ -8,13 +8,13 @@
 
 int rot13(char *c)
 {
-	int len = strlen(c);
+	int len = _strlen(c);
 	char *s = c;
 	char base;
 
 	while (*s)
 	{
-		if (isalpha(*s))
+		if (_isalpha(*s))
 		{
 			base = _islower(*s) ? 'a' : 'A';
 			_putchar((*s - base + 13) % 26 + base);
