@@ -10,6 +10,8 @@ int print_integer(int num)
 {
 	int len = 0;
 
+	if (num == (INT_MIN))
+		return (_puts("-2147483648"));
 	if (num < 0)
 	{
 		len += _putchar('-');
