@@ -25,6 +25,10 @@ int switch_format(char c, va_list format_args)
 			return (hex(va_arg(format_args, int), 'x'));
 		case 'X':
 			return (hex(va_arg(format_args, int), 'X'));
+		case 'b':
+			return (base_o_b(va_arg(format_args, int), 2));
+		case 'o':
+			return (base_o_b(va_arg(format_args, int), 8));
 		default:
 			return (_putchar(c));
 	}
@@ -46,7 +50,7 @@ int _printf(const char *format, ...)
 	while (*format)
 	{
 		if (*format == '%' && (*(format + 1) == '\0' || *(format + 1) == ' '))
-				return (-1);
+			return (-1);
 		if (*format == '%')
 		{
 			format++;
