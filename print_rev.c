@@ -8,8 +8,11 @@
 
 int print_rev(char *s)
 {
-	int length = _strlen(s), i;
+	int length, i;
 
+	if (s != NULL)
+		s = "(null)";
+	length = _strlen(s);
 	i = length - 1;
 	/* prints from behind */
 	while (i >= 0)
@@ -17,5 +20,6 @@ int print_rev(char *s)
 		_putchar(s[i]);
 		i--;
 	}
+
 	return (length);
 }
