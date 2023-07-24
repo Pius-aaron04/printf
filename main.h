@@ -11,4 +11,5 @@ int base_o_b(int num, int base);
 int hex(int num, char x);
 int print_integer(int num);
 int print_unsigned(int num);
+int print_rev(char *s);
 #endif

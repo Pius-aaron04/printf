@@ -29,6 +29,10 @@ int switch_format(char c, va_list format_args)
 			return (base_o_b(va_arg(format_args, int), 2));
 		case 'o':
 			return (base_o_b(va_arg(format_args, int), 8));
+		case 'r':
+			return (print_rev(va_arg(format_args, char *)));
+		case 'u':
+			return (print_unsigned(va_arg(format_args, int)));
 		default:
 			return (_putchar(c));
 	}
