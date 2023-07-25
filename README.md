@@ -1,5 +1,5 @@
 # ------------ 0x11. C - printf  --------------
-This project is an implementation of the printf function in the C standard libray.
+This project is an implementation of the printf function in the C standard library.
 
 
 Flag	Description
@@ -33,3 +33,7 @@ b	Prints the binary representation of an unsigned integer.
 R	Prints the rot13 translation of a string.
 r	Prints the reverse of a string.
 S	Prints a string and the hexadecimal representation of unprintable characters (prefixed with \x) in a string that is null terminated.
+
+
+
+By: Pius Aaron and Wanjiru Wanjiku
