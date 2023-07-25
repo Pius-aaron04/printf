@@ -13,7 +13,7 @@ int _islower(int c);
 int _isalpha(int c);
 int rot13(char *c);
 
-int base_o_b(unsigned int num, int base);
+int base_o_b(unsigned long int num, int base);
 int hex(long unsigned int num, char x);
 int print_integer(int num);
 int print_unsigned(unsigned int num);

@@ -34,7 +34,7 @@ int print_integer(int num)
  * Return: digits printed
  */
 
-int base_o_b(unsigned int num, int base)
+int base_o_b(unsigned long int num, int base)
 {
 	int len = 0;
 
@@ -98,5 +98,5 @@ int print_addr(void *ptr)
 	len += _putchar('0');
 	len += _putchar('x');
 	len += (hex((unsigned long)ptr, 'x'));
-	return(len);
+	return (len);
 }

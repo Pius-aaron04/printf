@@ -26,9 +26,9 @@ int switch_format(char c, va_list format_args)
 		case 'X':
 			return (hex(va_arg(format_args, unsigned int), 'X'));
 		case 'b':
-			return (base_o_b(va_arg(format_args, unsigned int), 2));
+			return (base_o_b(va_arg(format_args, unsigned long int), 2));
 		case 'o':
-			return (base_o_b(va_arg(format_args, unsigned int), 8));
+			return (base_o_b(va_arg(format_args, unsigned long int), 8));
 		case 'r':
 			return (print_rev(va_arg(format_args, char *)));
 		case 'u':
