@@ -37,6 +37,8 @@ int switch_format(char c, va_list format_args)
 			return (print_addr(va_arg(format_args, void *)));
 		case 'R':
 			return (rot13(va_arg(format_args, char *)));
+		case '\0':
+			return(0);
 		default:
 			return (_putchar(c));
 	}
@@ -57,8 +59,6 @@ int _printf(const char *format, ...)
 		return (-1);
 	while (*format)
 	{
-		if (*format == '%' && (*(format + 1) == '\0' || *(format + 1) == ' '))
-			return (-1);
 		if (*format == '%')
 		{
 			format++;
