@@ -34,6 +34,5 @@ R	Prints the rot13 translation of a string.
 r	Prints the reverse of a string.
 S	Prints a string and the hexadecimal representation of unprintable characters (prefixed with \x) in a string that is null terminated.
 
-HJKL,
 
 By: Pius Aaron and Wanjiru Wanjiku
