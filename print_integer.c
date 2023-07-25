@@ -86,7 +86,7 @@ int hex(unsigned long int num, char x)
 }
 
 /**
- * print-addr - prints memory address in hex format
+ * print_addr - prints memory address in hex format
  * @ptr: adrress
  * Return: length of characters printed
  */

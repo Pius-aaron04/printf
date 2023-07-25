@@ -9,6 +9,7 @@
 
 int switch_format(char c, va_list format_args)
 {
+
 	switch (c)
 	{
 		case 'c':
@@ -31,14 +32,18 @@ int switch_format(char c, va_list format_args)
 			return (base_o_b(va_arg(format_args, unsigned long int), 8));
 		case 'r':
 			return (print_rev(va_arg(format_args, char *)));
-		case 'u':
-			return (print_unsigned(va_arg(format_args, unsigned int)));
+		/*
+		 * case 'u':
+		 *	return (print_unsigned(va_arg(format_args, unsigned long int)));
+		 */
 		case 'p':
 			return (print_addr(va_arg(format_args, void *)));
 		case 'R':
 			return (rot13(va_arg(format_args, char *)));
 		case '\0':
 			return (0);
+		case ' ':
+			return (_putchar('%') + _putchar(c));
 		default:
 			return (_putchar(c));
 	}
