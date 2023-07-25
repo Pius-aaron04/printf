@@ -22,17 +22,19 @@ int switch_format(char c, va_list format_args)
 		case 'd':
 			return (print_integer(va_arg(format_args, int)));
 		case 'x':
-			return (hex(va_arg(format_args, int), 'x'));
+			return (hex(va_arg(format_args, unsigned int), 'x'));
 		case 'X':
-			return (hex(va_arg(format_args, int), 'X'));
+			return (hex(va_arg(format_args, unsigned int), 'X'));
 		case 'b':
-			return (base_o_b(va_arg(format_args, int), 2));
+			return (base_o_b(va_arg(format_args, unsigned int), 2));
 		case 'o':
-			return (base_o_b(va_arg(format_args, int), 8));
+			return (base_o_b(va_arg(format_args, unsigned int), 8));
 		case 'r':
 			return (print_rev(va_arg(format_args, char *)));
 		case 'u':
-			return (print_unsigned(va_arg(format_args, int)));
+			return (print_unsigned(va_arg(format_args, unsigned int)));
+		case 'p':
+			return (print_addr(va_arg(format_args, void *)));
 		case 'R':
 			return (rot13(va_arg(format_args, char *)));
 		default:

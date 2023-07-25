@@ -34,9 +34,11 @@ int print_integer(int num)
  * Return: digits printed
  */
 
-int base_o_b(int num, int base)
+int base_o_b(unsigned int num, int base)
 {
 	int len = 0;
+
+	base = (unsigned int)base;
 
 	if (num == 0)
 	{
@@ -56,9 +58,10 @@ int base_o_b(int num, int base)
  * @x: capilization
  * Return: length of digits printed
  */
-int hex(int num, char x)
+int hex(unsigned long int num, char x)
 {
 	int len = 0, remainder;
+
 
 	if (num == 0)
 	{
@@ -80,4 +83,20 @@ int hex(int num, char x)
 
 	/* recursively calculate length */
 	return (len + 1);
+}
+
+/**
+ * print-addr - prints memory address in hex format
+ * @ptr: adrress
+ * Return: length of characters printed
+ */
+
+int print_addr(void *ptr)
+{
+	int len = 0;
+
+	len += _putchar('0');
+	len += _putchar('x');
+	len += (hex((unsigned long)ptr, 'x'));
+	return(len);
 }
