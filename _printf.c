@@ -38,7 +38,7 @@ int switch_format(char c, va_list format_args)
 		case 'R':
 			return (rot13(va_arg(format_args, char *)));
 		case '\0':
-			return(0);
+			return (0);
 		default:
 			return (_putchar(c));
 	}
