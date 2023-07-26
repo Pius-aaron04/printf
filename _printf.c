@@ -32,15 +32,13 @@ int switch_format(char c, va_list format_args)
 		case 'r':
 			return (print_rev(va_arg(format_args, char *)));
 		case 'u':
-			return (print_unsigned(va_arg(format_args, unsigned int)));
+			return (print_u(va_arg(format_args, unsigned int)));
 		case 'p':
 			return (print_addr(va_arg(format_args, void *)));
 		case 'R':
 			return (rot13(va_arg(format_args, char *)));
-		case '\0':
-			return (0);
 		default:
-			return (_putchar(c));
+			return (_putchar('%') + _putchar(c));
 	}
 }
 /**
@@ -59,11 +57,13 @@ int _printf(const char *format, ...)
 		return (-1);
 	while (*format)
 	{
+		if (format[0] == '%' && *(format + 1) == '\0')
+			return (-1);
 		if (*format == '%')
 		{
 			format++;
 			result = switch_format(*format, format_args);
-			if (result == 0)
+			if (result == -1)
 				return (-1);
 			len += result;
 		}

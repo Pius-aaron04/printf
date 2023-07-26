@@ -17,6 +17,6 @@ int rot13(char *c);
 int base_o_b(unsigned long int num, int base);
 int hex(unsigned long int num, char x);
 int print_integer(int num);
-int print_unsigned(unsigned int num);
+int print_u(unsigned int num);
 int print_addr(void *ptr);
 #endif

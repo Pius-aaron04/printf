@@ -5,7 +5,7 @@
  * Return: 1 on success.
  * @c: character to print
  *
- * -1 on error. errno is set approximately
+ * -1 on error. error is set approximately
  */
 
 int _putchar(char c)
@@ -25,6 +25,8 @@ int _puts(char *str)
 
 	if (str == NULL)
 		str = "(null)";
+	if (*str == '\0')
+		return (0);
 	while (*str != '\0')
 	{
 		_putchar(*str);
