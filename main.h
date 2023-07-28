@@ -20,5 +20,4 @@ int hex(unsigned long int num, char x);
 int print_integer(int num);
 int print_u(unsigned int num);
 int print_addr(void *ptr);
-int helper_base(unsigned int num, int base);
 #endif

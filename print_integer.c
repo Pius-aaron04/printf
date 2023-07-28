@@ -1,26 +1,6 @@
 #include "main.h"
 
 /**
- * helper_b - prints leading zero for bases
- * @num: to be converted
- * @base: to convert to
- * Return: digits printed so far
- */
-
-int helper_base(unsigned int num, int base)
-{
-	int len = 0;
-
-	if (num == 0)
-		len += _putchar('0');
-	if (base == 2 || base == 8)
-		len += base_o_b(num, base);
-	else if (base == 'X' || base == 'x')
-		len += hex(num, base);
-	return (len);
-}
-
-/**
  * print_integer - prints integers
  * @num: number
  * Return: lenght of integer

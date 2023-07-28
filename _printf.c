@@ -22,13 +22,13 @@ int switch_format(char c, va_list format_args)
 		case 'd':
 			return (print_integer(va_arg(format_args, int)));
 		case 'x':
-			return (helper_base(va_arg(format_args, unsigned int), 'x'));
+			return (hex(va_arg(format_args, unsigned int), 'x'));
 		case 'X':
-			return (helper_base(va_arg(format_args, unsigned int), 'X'));
+			return (hex(va_arg(format_args, unsigned int), 'X'));
 		case 'b':
-			return (helper_base(va_arg(format_args, unsigned long int), 2));
+			return (base_o_b(va_arg(format_args, unsigned long int), 2));
 		case 'o':
-			return (helper_base(va_arg(format_args, unsigned long int), 8));
+			return (base_o_b(va_arg(format_args, unsigned long int), 8));
 		case 'r':
 			return (print_rev(va_arg(format_args, char *)));
 		case 'u':
