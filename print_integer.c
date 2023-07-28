@@ -38,14 +38,10 @@ int base_o_b(unsigned long int num, int base)
 {
 	int len = 0;
 
-	base = (unsigned int)base;
-
 	if (num == 0)
-	{
 		return (0);
-	}
-
-	len = base_o_b(num / base, base);
+	if (num > 2)
+		len = base_o_b(num / base, base);
 	_putchar('0' + (num % base));
 
 	/* recursively calculate length */
@@ -95,6 +91,8 @@ int print_addr(void *ptr)
 {
 	int len = 0;
 
+	if (!ptr)
+		return(_puts("(nil)"));
 	len += _putchar('0');
 	len += _putchar('x');
 	len += (hex((unsigned long)ptr, 'x'));
