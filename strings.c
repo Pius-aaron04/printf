@@ -51,7 +51,7 @@ int print_rev(char *s)
 {
 	int length, i;
 
-	if (*s = '\0')
+	if (*s == '\0')
 		return (0);
 	length = _strlen(s);
 	i = length - 1;
