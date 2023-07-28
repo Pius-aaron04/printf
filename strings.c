@@ -49,8 +49,11 @@ int _isalpha(int c)
 
 int print_rev(char *s)
 {
-	int length = _strlen(s), i;
+	int length, i;
 
+	if (*s = '\0')
+		return (0);
+	length = _strlen(s);
 	i = length - 1;
 	/* prints from behind */
 	while (i >= 0)
@@ -72,6 +75,9 @@ int rot13(char *c)
 	int len = _strlen(c);
 	char *s = c;
 	char base;
+
+	if (*c == 0)
+		return(0);
 
 	while (*s)
 	{
