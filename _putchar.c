@@ -16,7 +16,7 @@ int ascii(char *s)
 	while (*s)
 	{
 		if (*s < 32 || *s >= 127)
-			len += (_puts("\\x") + hex(*s, 'X'));
+			len += (_puts("\\x") + helper_base(*s, 'X'));
 		else
 			len += _putchar(*s);
 		s++;
