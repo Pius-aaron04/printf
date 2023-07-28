@@ -13,6 +13,7 @@ int print_rev(char *s);
 int _islower(int c);
 int _isalpha(int c);
 int rot13(char *c);
+int ascii(char *s);
 
 int base_o_b(unsigned long int num, int base);
 int hex(unsigned long int num, char x);

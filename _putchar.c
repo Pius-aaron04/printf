@@ -1,5 +1,28 @@
 #include <unistd.h>
+#include "main.h"
 
+/**
+ * ascii - prints ascii value of unprintable characters in hex
+ * @s: string
+ * Return: number of integers printed
+ */
+
+int ascii(char *s)
+{
+	int len = 0;
+
+	if (!s)
+		return (_puts("(nil)"));
+	while (*s)
+	{
+		if (*s < 32 || *s >= 127)
+			len += (_puts("\\x") + hex(*s, 'X'));
+		else
+			len += _putchar(*s);
+		s++;
+	}
+	return (len);
+}
 /**
  * _putchar - writes character c to stdout
  * Return: 1 on success.

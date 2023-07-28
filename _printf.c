@@ -37,6 +37,8 @@ int switch_format(char c, va_list format_args)
 			return (print_addr(va_arg(format_args, void *)));
 		case 'R':
 			return (rot13(va_arg(format_args, char *)));
+		case 'S':
+			return (ascii(va_arg(format_args, char *)));
 		default:
 			return (_putchar('%') + _putchar(c));
 	}

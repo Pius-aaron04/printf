@@ -77,7 +77,7 @@ int rot13(char *c)
 	char base;
 
 	if (*c == 0)
-		return(0);
+		return (0);
 
 	while (*s)
 	{

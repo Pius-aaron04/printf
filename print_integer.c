@@ -92,7 +92,7 @@ int print_addr(void *ptr)
 	int len = 0;
 
 	if (!ptr)
-		return(_puts("(nil)"));
+		return (_puts("(nil)"));
 	len += _putchar('0');
 	len += _putchar('x');
 	len += (hex((unsigned long)ptr, 'x'));
